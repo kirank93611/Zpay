@@ -14,6 +14,7 @@ const zodAuthMiddleware = (req, res, next) => {
   try {
     const decoded = jwtSchema.parse({ userId: "dummy" });
     req.user = decoded;
+    next();
   } catch (e) {
     console.error("Zod JWT validation error:", error.errors);
     res.status(403).send("Invalid Token");
