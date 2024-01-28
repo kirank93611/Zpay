@@ -6,7 +6,7 @@ const { User } = require("../models/user");
 const { error } = require("console");
 
 //user registration endpoint
-router.post("/registration", async (req, res) => {
+router.post("/register", async (req, res) => {
   //parsing and validating incoming data using zod
   try {
     const { userId, walletAddress, hashedPassword } = userValidation.parse(

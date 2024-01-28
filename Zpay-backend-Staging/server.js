@@ -1,9 +1,17 @@
 const express = require("express");
 const app = express();
-
+const route_index = require("./routes/index");
 //db
 require("./DB/db");
 
+//adding cors
+var cors = require("cors");
+
+//using cors
+app.use(cors());
+
+app.use(express.json());
+app.use(route_index);
 //body parser to avoid invalid body type in req body
 const bodyparser = require("body-parser");
 

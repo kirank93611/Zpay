@@ -3,6 +3,7 @@ const router = Router();
 
 const loginValidation = require("../middleware/userLoginSchema");
 const { User } = require("../models/user");
+const { route } = require("./registration");
 
 router.post("/login", async (req, res) => {
   try {
@@ -26,3 +27,5 @@ router.post("/login", async (req, res) => {
     res.status(400).json({ error: "Invalid data format" });
   }
 });
+
+module.exports = router;
