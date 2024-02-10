@@ -11,26 +11,26 @@ import AccountsAndSettings from "../Accounts-And-Settings/AccountsAndSettings";
 import NotFoundComponent from "../Not_Found/NotFound";
 
 const LeftBar = () => {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const [selectedPage, setSelectedPage] = useRecoilState(selectedPageState);
 
   const handleItemClick = (route) => {
     setSelectedPage(route);
-    navigate(route);
+    // navigate(route);
   };
 
   //defining a mapping between route paths and corresponding components
 
-  const routeComponents = {
-    "/dashboard": DashboardComponent,
-    "/transactions": Transactions,
-    "/payment-links": PaymentLinks,
-    "/scan-and-pay": ScanAndPay,
-    "/accounts-and-settings": AccountsAndSettings,
-  };
+  // const routeComponents = {
+  //   "/dashboard": DashboardComponent,
+  //   "/transactions": Transactions,
+  //   "/payment-links": PaymentLinks,
+  //   "/scan-and-pay": ScanAndPay,
+  //   "/accounts-and-settings": AccountsAndSettings,
+  // };
 
   //dynamically rendering the component based on the selected route
-  const RenderComponent = routeComponents[selectedPage] || NotFoundComponent;
+  // const RenderComponent = routeComponents[selectedPage] || NotFoundComponent;
 
   return (
     <div className="left-navbar">
