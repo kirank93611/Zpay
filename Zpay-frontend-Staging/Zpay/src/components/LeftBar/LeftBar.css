@@ -1,0 +1,27 @@
+LeftNavbar.css
+
+.left-navbar {
+    position:fixed;
+    left:0;
+    top:0;
+    width:0;
+    height:0;
+    background-color: #333;
+    padding-top: 20px;
+    float:left;
+}
+
+.left-navbar ul {
+    list-style-type: none;
+    padding:0;
+}
+
+.left-navbar li {
+    padding:10px;
+    color:white;
+    cursor:pointer;
+}
+
+.left-navbar li:hover {
+    background-color:#555;
+}

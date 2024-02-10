@@ -2,8 +2,8 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useRecoilState } from "recoil";
-import { userState } from "../atoms/userState";
-import "../styles.css";
+import { userState } from "../../atoms/userState";
+import "../../styles.css";
 
 const LoginForm = () => {
   const [user, setUser] = useRecoilState(userState);
@@ -14,6 +14,7 @@ const LoginForm = () => {
 
   const handleLogin = async () => {
     try {
+      console.log(loginData);
       const response = await axios.post(
         "http://localhost:3000/login",
         loginData

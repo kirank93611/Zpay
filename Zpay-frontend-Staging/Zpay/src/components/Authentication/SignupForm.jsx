@@ -1,7 +1,8 @@
 // src/components/SignupForm.jsx
 import React, { useState } from "react";
 import axios from "axios";
-import "../styles.css";
+import "../../styles.css";
+import qs from "qs";
 
 const SignupForm = () => {
   const [signupData, setSignupData] = useState({
@@ -12,6 +13,7 @@ const SignupForm = () => {
 
   const handleSignup = async () => {
     try {
+      console.log(signupData);
       await axios.post("http://localhost:3000/register", signupData);
       console.log("User registered successfully");
     } catch (error) {
