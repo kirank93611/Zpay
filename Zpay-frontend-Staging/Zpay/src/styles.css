@@ -1,14 +1,26 @@
 /* src/styles.css */
 
-body {
-    font-family: Arial, sans-serif;
+/* body { */
+    /* font-family: Arial, sans-serif;
     background-color: #f4f4f4;
     margin: 0;
     padding: 0;
     display: flex;
     justify-content: left;
     align-items: left;
-    height: 100vh;
+    height: 100vh; */
+/* position:absolute;
+background-color:#ffffff;
+height:1024px;
+width:1440px;
+padding:0px;
+display:flex;
+flex-direction:column;
+flex-wrap:nowrap;
+align-items:left;
+justify-content:center;
+
+
   }
   
   .container {
@@ -56,11 +68,11 @@ body {
     border: 0;
     height: 1px;
     background-color: #ddd;
-    margin: 20px 0;
-  }
+    margin: 20px 0; */
+  /* } */
   
   /* Responsive Styles */
-  @media screen and (max-width: 600px) {
+  /* @media screen and (max-width: 600px) {
     .container {
       width: 90%;
     }
@@ -70,5 +82,5 @@ body {
     .container {
       width: 95%;
     }
-  }
+  } */
   

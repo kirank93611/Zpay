@@ -24,8 +24,7 @@
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.22.0",
     "recoil": "^0.7.7",
-    "switch": "^0.0.0",
-    "tailwindcss": "^3.4.1"
+    "switch": "^0.0.0"
   },
   "devDependencies": {
     "@types/react": "^18.2.43",
@@ -35,6 +34,7 @@
     "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.5",
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.17",
     "vite": "^5.0.8"
   }
 }

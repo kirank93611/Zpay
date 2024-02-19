@@ -11,8 +11,10 @@ import { RecoilRoot } from "recoil";
 
 const DashboardComponent = () => {
   return (
-    <div>
-      <h1>welcome to the dashboard</h1>
+    <div class="flex flex-row">
+      <div>col 1</div>
+      <div>col 2</div>
+      <div>col 3</div>
     </div>
   );
 };
