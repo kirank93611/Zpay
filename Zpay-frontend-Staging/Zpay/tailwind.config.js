@@ -4,5 +4,8 @@ module.exports = {
     './pages/**/*.{html,js}',
     './components/**/*.{html,js}',
   ],
+  plugins:[
+    require('tailwindcss-all'),
+  ]
   // ...
 }

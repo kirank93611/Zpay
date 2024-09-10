@@ -7,8 +7,8 @@ const SignupPage=()=>{
        <Header
         heading="Signup for a account"
         paragraph="No Account? No worries, signup now"
-        linkName="signup"
-        linkUrl="/signup"/>
+        linkName="singin"
+        linkUrl="/"/>
        <SignupForm/>
     </div>
 }

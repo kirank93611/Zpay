@@ -2,7 +2,7 @@
   "name": "zpay",
   "private": true,
   "version": "0.0.0",
-  "type": "module",
+  "type": ".cjs",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -18,13 +18,15 @@
     "@mui/icons-material": "^5.15.9",
     "@mui/material": "^5.15.9",
     "axios": "^1.6.7",
+    "lucide-react": "^0.439.0",
     "mui": "^0.0.1",
     "qs": "^6.11.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.26.1",
     "recoil": "^0.7.7",
-    "switch": "^0.0.0"
+    "switch": "^0.0.0",
+    "tailwindcss-all": "^0.0.2"
   },
   "devDependencies": {
     "@types/react": "^18.2.43",
