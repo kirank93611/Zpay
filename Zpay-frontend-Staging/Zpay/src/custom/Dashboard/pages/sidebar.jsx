@@ -18,6 +18,7 @@ const SideBar=()=>{
                 <SidebarItem icon={<Settings size={20}/>}text="Settings"/>
                 <SidebarItem icon={<LifeBuoy size={20}/>}text="Help"/>
             </SideBarComp>
+            
         </div>
     )
 }
