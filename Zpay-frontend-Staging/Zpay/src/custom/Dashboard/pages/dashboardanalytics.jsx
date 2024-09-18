@@ -1,3 +1,5 @@
+//this is the code for the dashboard analytics page
+
 import DashboardAnalytics from "../components/DashboardAnalytics";
 import SideBar from "../components/SideBar";
 
