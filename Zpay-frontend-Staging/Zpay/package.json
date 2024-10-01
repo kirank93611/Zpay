@@ -1,59 +1,48 @@
 {
   "name": "zpay",
+  "version": "0.1.0",
   "private": true,
-  "version": "0.0.0",
-  "type": ".cjs",
-  "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
-  },
   "dependencies": {
     "@emotion/react": "^11.13.3",
     "@emotion/styled": "^11.13.0",
-    "@headlessui/react": "^1.7.18",
-    "@heroicons/react": "^2.1.1",
-    "@material-tailwind/react": "^2.1.9",
-    "@mui/icons-material": "^5.15.9",
-    "@mui/material": "^6.1.0",
-    "@mui/x-charts": "^7.17.0",
-    "@toolpad/core": "^0.6.0",
-    "axios": "^1.6.7",
-    "chart.js": "^4.4.4",
-    "lucide-react": "^0.439.0",
-    "mui": "^0.0.1",
-    "qs": "^6.11.2",
-    "react": "^17.0.0 || ^18.0.0",
-    "react-dom": "^17.0.0 || ^18.0.0",
-    "react-feather": "^2.0.10",
-    "react-icons": "^5.3.0",
-    "react-router-dom": "^6.26.1",
-    "recoil": "^0.7.7",
-    "switch": "^0.0.0",
-    "tailwindcss-all": "^0.0.2"
+    "@mui/material": "^6.1.1",
+    "@testing-library/jest-dom": "^5.17.0",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "i": "^0.3.7",
+    "npm": "^10.8.3",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.26.2",
+    "react-scripts": "5.0.1",
+    "recharts": "^2.12.7",
+    "web-vitals": "^2.1.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   },
   "devDependencies": {
-    "@types/react": "^18.2.43",
-    "@types/react-dom": "^18.2.17",
-    "@vitejs/plugin-react": "^4.2.1",
-    "autoprefixer": "^10.4.20",
-    "eslint": "^8.55.0",
-    "eslint-plugin-react": "^7.33.2",
-    "eslint-plugin-react-hooks": "^4.6.0",
-    "eslint-plugin-react-refresh": "^0.4.5",
-    "postcss": "^8.4.45",
-    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.17",
-    "vite": "^5.0.8"
-  },
-  "engines": {
-    "npm": ">=8.7.0"
-  },
-  "overrides": {
-    "react": "$react"
-  },
-  "peerDependencies": {
-    "react": "^17.0.0 || ^18.0.0",
-    "react-dom": "^17.0.0 || ^18.0.0"
+    "tailwindcss": "^3.4.13"
   }
 }
