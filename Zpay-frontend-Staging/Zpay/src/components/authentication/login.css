@@ -1,0 +1,275 @@
+*{
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    font-size: 16px;
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    box-sizing: border-box;
+    margin:0px;
+}
+
+div{
+    font-weight: 400;
+    unicode-bidi: isolate;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+
+
+@media screen and (min-width: 1200px) {
+    .zethbox.zethbox.zethbox.zethbox.zethbox {
+        width: 520px;
+    }
+}
+@media screen and (min-width: 1200px) {
+        .zethbox.zethbox.zethbox.zethbox.zethbox {
+            width: 520px;
+        }
+}
+
+.complete{
+    /* background-image: url(https://media.razorpay.com/file/platform/frontend-auth/razorpay/razorpay-bg-visual-1.3x.jpeg); */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: rgb(28, 26, 25);
+    height: 100%;
+    display: flex;
+    -webkit-box-pack: end;
+    justify-content: flex-end;
+    -webkit-box-align: center;
+    align-items: center;
+    width:1281px;
+    height:688px;
+}
+
+.zeth-login-left{
+    flex: 1 1 0%;
+    height: 100%;
+    display: flex;
+    padding-left: 80px;
+    padding-bottom: 88px;
+    flex-direction: column;
+}
+
+.zeth-login-left-add-div{
+    flex:1 1 0%;
+}
+
+.zeth-login-left-img{
+    position: fixed;
+    top: 94px;
+    left: 285px;
+}
+
+.zeth-login-left-img img{
+    border-radius: 50%;
+}
+
+
+.zeth-login-left-3 h3{
+    color: rgb(252, 252, 253);
+    font-family: "TASA Orbiter", "TASA Orbiter Fallback Arial", Arial;
+    font-size: 2rem;
+    font-weight: 600;
+    font-style: normal;
+    text-decoration-line: none;
+    line-height: 2.375rem;
+    letter-spacing: 0px;
+    margin: 0px;
+    padding: 0px;
+}
+
+.zeth-login-left-3 span{
+    color: rgb(73, 208, 140);
+    font-family: "TASA Orbiter", "TASA Orbiter Fallback Arial", Arial;
+    font-size: 2rem;
+    font-weight: 600;
+    font-style: normal;
+    text-decoration-line: none;
+    line-height: 2.375rem;
+    letter-spacing: 0px;
+    margin: 0px;
+    padding: 0px;
+}
+
+.zeth-login-left-3{
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width:604px;
+    height:124px;
+}
+
+
+@media screen and (min-width: 1200px) {
+    .zeth-login-left-3 {
+        width: 604px;
+    }
+
+}
+
+@media screen and (min-width: 768px) {
+    .zeth-login-left-3 {
+        width: 500px;
+    }
+
+}
+
+
+/* left ends and right begins */
+
+.zeth-login-right{
+    padding:12px;
+    height:100%;
+}
+
+@media screen and (min-width: 1200px) {
+    .zethbox {
+        width: 495px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .zethbox {
+        width: 424px;
+        -webkit-box-pack: center;
+        justify-content: center;
+        
+    }
+}
+
+@media screen and (min-width:480px) {
+    .zethbox {
+        -webkit-box-pack: center;
+        justify-content: center;
+    }
+}
+
+.zethbox{
+    display: flex;
+    background: rgb(255, 255, 255);
+    height: 100%;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 6px 24px;
+    border-radius: 8px;
+    width:520px;
+    -webkit-box-align: center;
+    height:664px;
+ 
+
+}
+
+body {
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    font-size: 16px;
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+.form{
+    width:100%;
+}
+
+@media screen and (min-width: 1200px) {
+    .form-div {
+        padding-top: 144px;
+        padding-right: 56px;
+        padding-left: 56px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .form-div {
+        padding:72px 24px 32px;
+    }
+}
+
+@media screen and (min-width: 480px) {
+    .form-div {
+        display:flex;
+    }
+}
+
+@media screen and (min-width: 320px) {
+    .form-div {
+        padding-top: 144px;
+        padding-right: 56px;
+        padding-left: 56px;
+       
+    }
+}
+
+.form-div{
+    overflow-y: scroll;
+    flex-direction: column;
+}
+
+.form1{
+   margin-bottom: 28px;
+}
+
+
+.form2{
+    flex:1 1 0%;
+    margin-bottom:12px;
+}
+
+.form1-1{
+    margin-bottom:24px;
+}
+
+.form1-1 img{
+    display:block;
+    max-width:100%;
+    width:44px;
+    border-radius:20%;
+}
+
+.form1-2{
+    margin-bottom:12px;
+}
+
+.form1-2-span-1{
+    color: rgb(118, 142, 167);
+    font-family: Inter, "Inter Fallback Arial", Arial;
+    font-size: 0.875rem;
+    font-weight: 400;
+    font-style: normal;
+    text-decoration-line: none;
+    line-height: 1.25rem;
+    letter-spacing: 0px;
+    margin: 0px;
+    padding: 0px;
+}
+
+.form1-2-span-2{
+    color: rgb(118, 142, 167);
+    font-family: Inter, "Inter Fallback Arial", Arial;
+    font-size: 0.875rem;
+    font-weight: 600;
+    font-style: normal;
+    text-decoration-line: none;
+    line-height: 1.25rem;
+    letter-spacing: 0px;
+    margin: 0px;
+    padding: 0px;
+}
+
+.form1-3{
+    color: rgb(25, 40, 57);
+    font-family: "TASA Orbiter", "TASA Orbiter Fallback Arial", Arial;
+    font-size: 2rem;
+    font-weight: 600;
+    font-style: normal;
+    text-decoration-line: none;
+    line-height: 2.375rem;
+    letter-spacing: 0px;
+    margin: 0px 0px 16px;
+    padding: 0px;
+}
+
+.form2{
+    flex:1 1 0%;
+    margin-bottom: 12px;
+}
