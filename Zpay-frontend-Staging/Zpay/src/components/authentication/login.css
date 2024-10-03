@@ -1,4 +1,4 @@
-*{
+/* *{
     line-height: 1;
     -webkit-font-smoothing: antialiased;
     font-size: 16px;
@@ -30,7 +30,7 @@ div{
 }
 
 .complete{
-    /* background-image: url(https://media.razorpay.com/file/platform/frontend-auth/razorpay/razorpay-bg-visual-1.3x.jpeg); */
+    background-image: url(https://media.razorpay.com/file/platform/frontend-auth/razorpay/razorpay-bg-visual-1.3x.jpeg);
     background-repeat: no-repeat;
     background-size: cover;
     background-color: rgb(28, 26, 25);
@@ -118,7 +118,7 @@ div{
 }
 
 
-/* left ends and right begins */
+
 
 .zeth-login-right{
     padding:12px;
@@ -301,7 +301,7 @@ body {
     border: none;
     cursor: auto;
     font:inherit;
-    /* asdfadfs */
+  
 }
 
 .form3-input{
@@ -353,9 +353,8 @@ body {
 
 .form3 button:hover{
     outline: rgba(46, 91, 255, 0.18) solid 4px;
-    outline-offset: 1px;
-    transition-property: outline-width;
-    transition-duration: 400ms;
+
+    transition-duration: 100ms;
     transition-timing-function: cubic-bezier(0.3, 0, 0.2, 1);
 }
 
@@ -396,4 +395,4 @@ body {
     text-align: center;
     margin: 0px;
     padding: 0px;
-}
+} */
