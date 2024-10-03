@@ -44,7 +44,19 @@ const Login = () => {
                   <div className="form2-5"></div>
                   <div className="form2-6"></div>
                 </div>
-                <div className="form3">link</div>
+                <div className="form3">
+                <label>Enter your email or phone number</label>
+                  <div className="form3-input">
+                  
+                  <input/>
+                  </div>
+                  {/* Password */}
+                  <label>Enter your email or phone number</label>
+                  <div className="form3-input">
+                  <input type="password" placeholder=''/>
+                  </div>
+                 <button type="submit"><div>signin</div></button>
+                </div>
               </div>
             </form>
         </div>
