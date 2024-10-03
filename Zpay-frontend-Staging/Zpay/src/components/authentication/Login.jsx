@@ -82,7 +82,7 @@ const Login = () => {
         <div className="text-center mt-20 lg:mt-0">
           <h3 className="text-white text-2xl font-semibold">
             Join us for a <span className="text-green-400">privacy-based KYC flow</span><br />
-            where we do not disclose your personal information.
+            where we do not disclose your personal information with <span className="text-blue-600">zkKYC</span>.
           </h3>
         </div>
       </div>
@@ -94,7 +94,7 @@ const Login = () => {
             <img className="w-11 mb-4 rounded-md" src="https://avatars.githubusercontent.com/u/157960807?s=200&v=4" alt="Zeth Logo" />
             <div className="text-center">
               <span className="text-gray-500 text-sm">Welcome to</span>
-              <span className="text-gray-500 text-sm font-semibold"> Zeth Payments</span>
+              <span className="text-gray-500 text-sm font-semibold"> Quant Payments</span>
               <h3 className="text-gray-900 text-2xl font-semibold mt-4">Get started with your email or phone number</h3>
             </div>
           </div>

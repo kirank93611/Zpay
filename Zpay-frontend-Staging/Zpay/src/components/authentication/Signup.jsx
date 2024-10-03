@@ -36,7 +36,7 @@ const SignUp = () => {
           <div className="flex flex-col items-center">
             <img className="w-11 mb-4 rounded-md" src="https://avatars.githubusercontent.com/u/157960807?s=200&v=4" alt="Zeth Logo" />
             <div className="text-center">
-              <span className="text-gray-500 text-sm">Welcome to</span>
+              <span className="text-gray-500 text-sm">Welcome to Qauntpay</span>
               <h3 className="text-gray-900 text-2xl font-semibold mt-4">Create your account</h3>
             </div>
           </div>
