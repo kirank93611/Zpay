@@ -94,7 +94,7 @@ const Login = () => {
             <img className="w-11 mb-4 rounded-md" src="https://avatars.githubusercontent.com/u/157960807?s=200&v=4" alt="Zeth Logo" />
             <div className="text-center">
               <span className="text-gray-500 text-sm">Welcome to</span>
-              <span className="text-gray-500 text-sm font-semibold"> Quant Payments</span>
+              <span className="text-gray-500 text-sm font-semibold"> Zeth Payments</span>
               <h3 className="text-gray-900 text-2xl font-semibold mt-4">Get started with your email or phone number</h3>
             </div>
           </div>
