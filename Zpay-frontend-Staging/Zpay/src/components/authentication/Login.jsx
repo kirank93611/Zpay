@@ -70,8 +70,23 @@
 // export default Login;
 
 import React from 'react';
+import { useState } from 'react';
+import { useAuth } from '../authentication/context/AuthContext';
+
 
 const Login = () => {
+  const [formData,setFormData]=useState({email:'',password:''});
+  const {login}=useAuth();
+
+  const handleSubmit=(e)=>{
+    e.preventDefault();
+    login(formData.email,formData.password);
+  }
+
+  const handleChange=(e)=>{
+    setFormData({...formData,[e.target.name]:e.target.value});
+  }
+
   return (
     <div className="flex flex-col lg:flex-row min-h-screen justify-end bg-gradient-to-br from-gray-900 to-black">
       {/* Left Section */}
@@ -89,7 +104,7 @@ const Login = () => {
 
       {/* Right Section */}
       <div className="bg-white w-full max-w-lg lg:max-w-xl h-full lg:h-auto shadow-lg rounded-lg flex items-center justify-center">
-        <form className="w-full px-8 py-12">
+        <form onSubmit={handleSubmit} className="w-full px-8 py-12">
           <div className="flex flex-col items-center">
             <img className="w-11 mb-4 rounded-md" src="https://avatars.githubusercontent.com/u/157960807?s=200&v=4" alt="Zeth Logo" />
             <div className="text-center">
@@ -104,7 +119,11 @@ const Login = () => {
             <label className="block text-gray-700 mb-2">Enter your email or phone number</label>
             <div className="relative mb-6">
               <input
-                type="text"
+                type="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                required
                 className="w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring focus:ring-blue-300"
                 placeholder="Email or phone number"
               />
@@ -114,8 +133,12 @@ const Login = () => {
             <div className="relative mb-6">
               <input
                 type="password"
+                name="password"
+                value={formData.password}
+                onChange={handleChange}
                 className="w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring focus:ring-blue-300"
                 placeholder="Password"
+                required
               />
             </div>
 

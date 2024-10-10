@@ -1,12 +1,12 @@
 
 import './sidebar.css'
-import Tbl from '../table/table'
-
+import Tbl from '../table/table';
 import React from'react';
+import { useAuth } from '../../authentication/context/AuthContext';
 
 
 export default function Sidebar() {
-
+  const { user, logout } = useAuth();
 
   return (
     <div className='container'>
@@ -59,14 +59,14 @@ export default function Sidebar() {
         <a href="#">Settings</a>
       </li>
       <li>
-        <a href="#">Logout</a>
+        <a href="#" onClick={logout}>Logout</a>
       </li>
     </ul>
     <div className="user-account">
       <div className="user-profile">
         <img src="images/profile-img.jpg" alt="Profile Image" />
         <div className="user-detail">
-          <h3>Eva Murphy</h3>
+          <h3>Welcome,{user?.email}</h3>
           <span>Web Developer</span>
         </div>
       </div>
