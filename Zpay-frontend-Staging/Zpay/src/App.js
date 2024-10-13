@@ -7,6 +7,7 @@ import SignUp from './components/authentication/Signup';
 import { AuthProvider } from './components/authentication/context/AuthContext';
 import Sidebar from './components/dashboard/sidebar/sidebar';
 import PrivateRoute from './components/authentication/PrivateRoute';
+import Dashboard from './components/dashboard/Dashboard';
 
 
 const App = () => {
@@ -19,7 +20,7 @@ const App = () => {
         <Route path="/login" element={<Login />}/>
         {/* Route for the sign-up page */}
         <Route path="/signup" element={<SignUp />}/>
-        <Route path="/dashboard" element={<PrivateRoute><Sidebar /></PrivateRoute>} />
+        <Route path="/dashboard" element={<PrivateRoute><Dashboard /></PrivateRoute>} />
       </Routes>
       </AuthProvider>
     </BrowserRouter>
