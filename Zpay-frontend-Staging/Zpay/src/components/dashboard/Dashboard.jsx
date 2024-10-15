@@ -39,10 +39,20 @@
                     </div>
                 </div>
                 <div className="flex-1 overflow-y-auto px-8 py-6 md:px-5">
-                    <div className="flex flex-col h-full">
-                        Here add your content
+                    <div className="flex-1 w-full transistion-all duration-500">
+                        {/* first-element */}
+                    <div className="flex justify-between items-center mb-6">
+                        <h2 className="header-h3 text-gray-1000">Today</h2>
+                        <button type="button" className="_btn_3v0q4_1 _primary_3v0q4_38 _lg_3v0q4_26">
+                        <span className="flex items-center justify-center" style={{width:"16px",height:"16px"}}><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.00004 3.33331V12.6666M3.33337 7.99998H12.6667" stroke="white" stroke-width="2" strokeLinecap="round" stroke-linejoin="round"></path></svg></span>
+                        <span>Create Payment</span>
+                        </button>
+                        
                     </div>
-                    
+
+                    {/* second-element */}
+                    <div className="grid grid-cols-3 sm:grid-cols-1 gap-4 mb-6">second-element</div>
+                    </div>
                 </div>
                 </div>
             </div>

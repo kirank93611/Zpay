@@ -17,7 +17,7 @@ export default function Sidebar() {
       <h2>CodingLab</h2>
     </div>
     <ul className="sidebar-links">
-      <h4>
+      <h4>  
         <span>Main Menu</span>
         <div className="menu-separator"></div>
       </h4>
