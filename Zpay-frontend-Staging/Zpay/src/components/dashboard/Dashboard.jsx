@@ -51,7 +51,10 @@
                     </div>
 
                     {/* second-element */}
-                    <div className="grid grid-cols-3 sm:grid-cols-1 gap-4 mb-6">second-element</div>
+                    <div className="grid grid-cols-3 sm:grid-cols-1 gap-4 mb-6">
+                        <div className="mb-10">one</div>
+                        
+                    </div>
                     </div>
                 </div>
                 </div>

@@ -1,0 +1,13 @@
+.border-black\/12 {
+    border-color: rgba(0, 0, 0, .12);
+}
+
+.home {
+    background-color: transparent;
+}
+
+.body-md {
+    font-size: .875rem;
+    line-height: 1.25rem;
+    line-height: 1.4;
+}
