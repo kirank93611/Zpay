@@ -1,19 +1,37 @@
+// src/controllers/userController.ts
 import { Request, Response } from 'express';
-import prisma from '../../DB/';  // Prisma client to interact with DB
+import { PrismaClient } from '@prisma/client';
+import bcrypt from 'bcryptjs';
+import jwt from 'jsonwebtoken';
 
-// Register User
-export const registerUser = async (req: Request, res: Response) => {
-    const { name, email, password } = req.body;
-    try {
-        const user = await prisma.user.create({
-            data: {
-                name,
-                email,
-                password,  // In real-world, hash password before saving
-            },
-        });
-        res.status(201).json(user);
-    } catch (error) {
-        res.status(500).json({ message: 'Error registering user', error });
+const prisma = new PrismaClient();
+
+export class UserController {
+    async register(req:Request,res:Response) {
+        try{
+            const {name,email,password}=req.body;
+
+            //hashing password
+            const hashedPassword=await bcrypt.hash(password,10);
+
+            //create user
+            const user=await prisma.user.create({
+                data:{
+                    name,email,password:hashedPassword
+                },
+            });
+
+            //generate jwt
+            const token=jwt.sign(
+                {id:user.id},
+                process.env.JWT_SECRET!,
+                {expiresIn:'24h'}
+            );
+            res.status(201).json({
+                user,token
+            })
+        } catch(error){
+            res.status(500).json({error:"Registration Failed"})
+        }
     }
-};
+}

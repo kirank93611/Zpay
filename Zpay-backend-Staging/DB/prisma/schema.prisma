@@ -1,0 +1,200 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum TransactionType{
+  DEPOSIT
+  WITHDRAWAL
+  TRANSFER
+  SWAP
+  STAKING_REWARD
+  REFERRAL_REWARD  
+}
+
+enum TransactionStatus{
+  PENDING
+  PROCESSING
+  COMPLETED
+  FAILED
+  CANCELLED
+  REFUNDED
+}
+
+enum CryptoAsset{
+    BTC
+    ETH
+    USDT
+    USDC
+    BNB
+    //Add other Cryptocurrencies
+}
+
+enum UserStatus{
+    ACTIVE
+    BLOCKED
+    SUSPENDED
+}
+
+model User{
+id Int @id @default(autoincrement())
+name String
+email String
+password String
+phone String? @unique
+status UserStatus @default(ACTIVE)
+
+//Financial
+wallets Wallet[]
+webhooks Webhook[]
+apiKeys APIKey[]
+
+//Timestamps
+createdAt DateTime @default(now())
+updatedAt DateTime @updatedAt
+
+@@index([email])
+}
+
+model Wallet{
+    id Int @id @default(autoincrement())
+    user User @relation(fields:[id],references:[id])
+    userId Int
+    asset CryptoAsset
+    balance       Float         @default(0)
+    address       String        @unique
+    privateKey    String?       // Encrypted
+    isExternal    Boolean       @default(false)
+    label         String?
+    transactions  Transaction[]
+    swaps         Swap[]
+    stakingPools  StakingPool[]
+    createdAt     DateTime      @default(now())
+    updatedAt     DateTime      @updatedAt
+
+    @@index([userId])
+    @@index([address])
+}
+
+model Transaction{
+    id              Int              @id @default(autoincrement())
+    wallet          Wallet           @relation(fields: [walletId], references: [id])
+    walletId        Int
+    amount          Float
+    transactionType TransactionType
+    status          TransactionStatus
+    txHash          String?          @unique
+    blockNumber     Int?
+    fee             Float?
+    toAddress       String?
+    fromAddress     String?
+    networkFee      Float?
+    description     String?
+    metadata        Json?            // Additional transaction data
+    createdAt       DateTime         @default(now())
+    updatedAt       DateTime         @updatedAt
+
+    @@index([walletId])
+    @@index([txHash])
+    @@index([status])
+}
+
+model Swap {
+  id            Int       @id @default(autoincrement())
+  wallet        Wallet    @relation(fields: [walletId], references: [id])
+  walletId      Int
+  fromAsset     CryptoAsset
+  toAsset       CryptoAsset
+  fromAmount    Float
+  toAmount      Float
+  rate          Float
+  fee           Float
+  status        TransactionStatus
+  txHash        String?
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  @@index([walletId])
+}
+
+model StakingPool {
+  id            Int       @id @default(autoincrement())
+  wallet        Wallet    @relation(fields: [walletId], references: [id])
+  walletId      Int
+  asset         CryptoAsset
+  amount        Float
+  apy           Float
+  lockPeriod    Int       // in days
+  rewards       Float     @default(0)
+  startDate     DateTime
+  endDate       DateTime?
+  status        String    // active, ended, withdrawn
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  @@index([walletId])
+}
+
+model APIKey {
+  id          Int      @id @default(autoincrement())
+  user        User     @relation(fields: [userId], references: [id])
+  userId      Int
+  key         String   @unique
+  secret      String
+  name        String?
+  permissions String[] // array of allowed actions
+  lastUsed    DateTime?
+  isActive    Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@index([userId])
+  @@index([key])
+}
+
+model Webhook {
+  id          Int      @id @default(autoincrement())
+  user        User     @relation(fields: [userId], references: [id])
+  userId      Int
+  url         String
+  secret      String
+  events      String[] // array of events to listen for
+  isActive    Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@index([userId])
+}
+
+model NetworkConfig {
+  id            Int         @id @default(autoincrement())
+  asset         CryptoAsset
+  network       String      // mainnet, testnet
+  rpcUrl        String
+  chainId       Int
+  minConfirmations Int
+  isActive      Boolean     @default(true)
+  createdAt     DateTime    @default(now())
+  updatedAt     DateTime    @updatedAt
+
+  @@unique([asset, network])
+}
+
+model FeeConfig {
+  id            Int         @id @default(autoincrement())
+  asset         CryptoAsset
+  operation     String      // withdrawal, deposit, transfer
+  fixedFee      Float?
+  percentageFee Float?
+  minFee        Float?
+  maxFee        Float?
+  isActive      Boolean     @default(true)
+  createdAt     DateTime    @default(now())
+  updatedAt     DateTime    @updatedAt
+
+  @@unique([asset, operation])
+}
