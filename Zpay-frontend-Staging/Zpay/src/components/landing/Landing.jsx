@@ -14,7 +14,7 @@ const Landing = () => {
             </div>
         </div></header>
        <div className="flex justify-center items-center mt-56">
-        <h1 className="text-6xl font-bold text-center text-white drop-shadow-xl antialiased">Welcome to ZethPay</h1>
+        <h1 className="text-6xl font-bold text-center text-white drop-shadow-xl antialiased">Welcome to ZPay</h1>
        </div>
     </div>
     )

@@ -1,6 +1,5 @@
 
 import './sidebar.css'
-import Tbl from '../table/table';
 import React from'react';
 import { useAuth } from '../../authentication/context/AuthContext';
 
@@ -72,8 +71,6 @@ export default function Sidebar() {
       </div>
     </div>
   </aside>
-
-      <Tbl />
     </div>
     
   
