@@ -4,7 +4,8 @@ import {UserController} from "../controllers/userController";
 
 const router=express.Router();
 
-router.post('/signin',UserController);
+router.post('/signup',UserController);
+
 
 
 export default router;

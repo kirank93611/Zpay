@@ -4,6 +4,7 @@ import { PrismaClient } from '@prisma/client';
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 
+
 const prisma = new PrismaClient();
 
 export const UserController =
@@ -21,6 +22,7 @@ export const UserController =
                 },
             });
 
+            
             //generate jwt
             const token=jwt.sign(
                 {id:user.id},
@@ -31,6 +33,7 @@ export const UserController =
                 user,token
             })
         } catch(error){
+            console.log(error);
             res.status(500).json({error:"Registration Failed"})
         }
     }
