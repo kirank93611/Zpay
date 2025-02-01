@@ -6,7 +6,7 @@ import jwt from 'jsonwebtoken';
 
 const prisma = new PrismaClient();
 
-export const UserController =
+export const TransactionController =
     async (req:Request,res:Response)=>{
         try{
             const {name,email,password}=req.body;
