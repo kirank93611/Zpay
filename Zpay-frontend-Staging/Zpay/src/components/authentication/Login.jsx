@@ -5,16 +5,22 @@ import { useAuth } from '../authentication/context/AuthContext';
 
 const Login = () => {
   const [formData,setFormData]=useState({email:'',password:''});
-  const {login}=useAuth();
+  const [error,setError]=useState(null);
+  const {login , loading}=useAuth();
 
-  const handleSubmit=(e)=>{
+  const handleSubmit=async (e)=>{
     e.preventDefault();
-    login(formData.email,formData.password);
-  }
+    setError("");
+    try{
+      await login(formData.email,formData.password);
+    } catch (error){
+      setError(error.message || "Login failed. Please check your credentials and try again.");
+    }
+  };
 
   const handleChange=(e)=>{
     setFormData({...formData,[e.target.name]:e.target.value});
-  }
+  };
 
   return (
     <div className="flex flex-col lg:flex-row min-h-screen justify-end bg-gradient-to-br from-gray-900 to-black">
@@ -40,6 +46,12 @@ const Login = () => {
               <span className="text-gray-500 text-sm">Welcome to</span>
               <span className="text-gray-500 text-sm font-semibold"> Zeth Payments</span>
               <h3 className="text-gray-900 text-2xl font-semibold mt-4">Get started with your email or phone number</h3>
+              {/* Error Message */}
+              {error && (
+            <div className="mb-4 p-3 bg-red-100 border border-red-400 text-red-700 rounded">
+              {error}
+            </div>
+          )}
             </div>
           </div>
 
@@ -71,8 +83,8 @@ const Login = () => {
               />
             </div>
 
-            <button type="submit" className="w-full py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition duration-150">
-              Sign In
+            <button type="submit" className={`w-full py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition duration-150 ${loading ? 'opacity-50 cursor-not-allowed':''}`}>
+              {loading ? "Signing In..." : "Sign In"}
             </button>
           </div>
         </form>

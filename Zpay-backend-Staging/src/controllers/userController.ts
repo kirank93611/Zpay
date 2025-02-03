@@ -48,27 +48,51 @@ export const signup=async(req:Request,res:Response)=>{
 //Login controller
 export const login=async(req:Request,res:Response)=>{
     try{
-        //1. Extract user data from the request body
         const {email,password}=req.body;
-        //2. User verification
-        const user =await prisma.user.findFirst({
-            where:{email}
-        });
-        const username=user?.name;
-        //3. Check if the user exists
-        if(!user){
-            return res.status(401).json({error:"user not found"});
-        }
-        //4. Check if the password is correct
-        const isValidPassword=await bcrypt.compare(password,user?.password);
-        if(!isValidPassword){
-            return res.status(401).json({error:"invalid password"});
+
+        // Validate input
+        if (!email || !password) {
+            return res.status(400).json({
+                error: "Email and password are required"
+            });
         }
 
-        //5.Generate JWT Token
-        const token=jwt.sign({id:user?.id},process.env.JWT_SECRET!,{expiresIn:'24h'})
-        res.status(200).json({token,message:`login successful ${username}`,username});
-    } catch(error){
-        res.status(500).json({error:"please check your credentials"})
+        // Find user
+        const user = await prisma.user.findFirst({
+            where: { email }
+        });
+        
+        if (!user) {
+            return res.status(401).json({
+                error: "No account found with this email"
+            });
+        }
+
+        // Check password
+        const isValidPassword = await bcrypt.compare(password, user.password);
+        if (!isValidPassword) {
+            return res.status(401).json({
+                error: "Invalid password"
+            });
+        }
+
+        // Generate JWT Token
+        const token = jwt.sign(
+            { id: user.id },
+            process.env.JWT_SECRET!,
+            { expiresIn: '24h' }
+        );
+
+        res.status(200).json({
+            token,
+            message: `Welcome back, ${user.name}!`,
+            username: user.name
+        });
+
+    } catch (error) {
+        console.error('Login error:', error);
+        res.status(500).json({
+            error: "An unexpected error occurred. Please try again later."
+        });
     }
 }
