@@ -1,6 +1,10 @@
  import "./dash.css"
+ import { useAuth } from '../authentication/context/AuthContext';
+
+
 
  export default function Dashboard() {
+    const {logout}=useAuth();
     return(
         <div className="flex w-full flex-col bg-white min-h-screen">
             <div className="w-full bg-white/80 sticky top-0 shadow-[0px_1px_2px_rgba(0,0,0,0.08),0px_0px_0px_1px_rgba(233,237,245,0.8)] background-blur-sm z-20">
@@ -13,7 +17,7 @@
                         <span className="inline-flex items-center gap-1 pl-1.5 pr-1.5 pt-[1px] pb-[2px] text-xs leading-4 font-smaller tracking-[.01em] bg-[#e9edf5] text-[#5a6376] rounded-full  mb-2">Beta</span>
                         </div>
                     </div>
-                    <div className="flex items-center gap-2.5">another</div>
+                    <div className="flex items-center gap-2.5"><button onClick={logout}>Logout</button></div>
                     </div> 
                 </div>
             </div>
