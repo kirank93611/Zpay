@@ -19,7 +19,7 @@ export const TransactionController =
                 data:{
                     name,email,password:hashedPassword
                 },
-            });
+            });           
 
             //generate jwt
             const token=jwt.sign(
