@@ -4,6 +4,15 @@ import axios from "axios";
 
 const AuthContext = createContext();
 
+// Define public routes outside component for better performance
+const PUBLIC_ROUTE_PATTERNS = [
+  /^\/login(\?.*)?$/,    // Login page with optional query params
+  /^\/register(\?.*)?$/, // Register page with optional query params
+  /^\/about(\?.*)?$/,    // About page
+  /^\/contact(\?.*)?$/,  // Contact page
+  /^\/reset-password(\?.*)?$/, // Password reset
+];
+
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -42,12 +51,18 @@ export const AuthProvider = ({ children }) => {
   useEffect(() => {
     if (loading) return; // Don't handle redirects while checking auth status
 
+    const isPublicRoute = PUBLIC_ROUTE_PATTERNS.some(pattern => 
+      pattern.test(location.pathname)
+    );
+
     if (user && location.pathname === '/login') {
       navigate('/dashboard', { replace: true });
-    } else if (!user && location.pathname !== '/login') {
-      navigate('/login', { replace: true });
+    } else if (!user && !isPublicRoute) {
+      // Redirect to login if user is not authenticated and trying to access a protected route
+      const returnUrl = encodeURIComponent(location.pathname + location.search);
+      navigate(`/login?returnUrl=${returnUrl}`, { replace: true });
     }
-  }, [user, loading, location.pathname, navigate]); // Only depend on auth state and location changes
+  }, [user, loading, location]); // Simplified dependencies by using location object
 
   const login = async (email, password) => {
     try {
