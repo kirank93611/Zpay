@@ -6,8 +6,9 @@ const AuthContext = createContext();
 
 // Define public routes outside component for better performance
 const PUBLIC_ROUTE_PATTERNS = [
-  /^\/login(\?.*)?$/,    // Login page with optional query params
-  /^\/register(\?.*)?$/, // Register page with optional query params
+  /^\/login(\?.*)?$/,  
+  /^\/(\?.*)?$/ , // Login page with optional query params
+  /^\/signup(\?.*)?$/, // Register page with optional query params
   /^\/about(\?.*)?$/,    // About page
   /^\/contact(\?.*)?$/,  // Contact page
   /^\/reset-password(\?.*)?$/, // Password reset
@@ -64,6 +65,27 @@ export const AuthProvider = ({ children }) => {
     }
   }, [user, loading, location]); // Simplified dependencies by using location object
 
+
+  const signup=async(name,email,password)=>{
+    try{
+      setLoading(true);
+      const response=await axios.post("http://localhost:4000/api/users/signup",{
+        name,
+        email,
+        password
+      });
+      const {token,username}=response.data;
+      localStorage.setItem("token",token);
+      localStorage.setItem("user",JSON.stringify({email,username}));
+      axios.defaults.headers.common['Authorization']=`Bearer ${token}`;
+      setUser({email,username});
+      navigate('/dashboard',{replace:true});
+    }catch(error){
+      throw new Error(error.response?.data?.error||"Signup failed. Please try again.");
+    }finally{
+      setLoading(false);
+    }
+  };
   const login = async (email, password) => {
     try {
       setLoading(true);

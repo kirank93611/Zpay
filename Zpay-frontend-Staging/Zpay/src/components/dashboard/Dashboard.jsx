@@ -31,10 +31,8 @@
                                 <a className="group py-1.5 px-2 flex items-center gap-3 transition-all duration-300 button-b1 text-gray-500 hover:text-gray-1000 active:text-indigo-500 "  aria-current="page"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="size-5">
                                 <path className="hover:fill-gray-700 active:text-indigo-500" fillRule="evenodd" d="M9.293 2.293a1 1 0 0 1 1.414 0l7 7A1 1 0 0 1 17 11h-1v6a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1v-3a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v3a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-6H3a1 1 0 0 1-.707-1.707l7-7Z" clipRule="evenodd" /></svg>Home</a>
                             </li>
-                        
-                            <li>
-                                <a className="text-gray-500 active:text-indigo-500 group py-1.5 px-2 flex items-center gap-3 transition-all duration-300 button-b1 hover:text-gray-1000"  aria-current="page"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="none" class="size-5">
-  <path  className="hover:fill-gray-700 active:text-indigo-500" fill-rule="evenodd" d="M1 4a1 1 0 0 1 1-1h16a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V4Zm12 4a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM4 9a1 1 0 1 0 0-2 1 1 0 0 0 0 2Zm13-1a1 1 0 1 1-2 0 1 1 0 0 1 2 0ZM1.75 14.5a.75.75 0 0 0 0 1.5c4.417 0 8.693.603 12.749 1.73 1.111.309 2.251-.512 2.251-1.696v-.784a.75.75 0 0 0-1.5 0v.784a.272.272 0 0 1-.35.25A49.043 49.043 0 0 0 1.75 14.5Z" clip-rule="evenodd" /></svg></a></li>
+
+                            <li src="https://img.icons8.com/?size=100&id=77124&format=png&color=000000"></li>                            
                             <li></li>
                             <li></li>
                             <li></li>

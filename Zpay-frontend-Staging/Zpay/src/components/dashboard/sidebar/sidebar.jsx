@@ -40,7 +40,7 @@ export default function Sidebar() {
         <a href="#">Groups</a>
       </li>
       <li>
-        <a href="#">Transfer</a>
+        <a href="#">Payment-links</a>
       </li>
       <li>
         <a href="#">All Reports</a>
